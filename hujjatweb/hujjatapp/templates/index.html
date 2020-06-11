@@ -1,0 +1,314 @@
+<!doctype html>
+    <html lang="en">
+      <head >
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <title>ઈન્કવાઈરી પોઇન્ટ</title>
+      </head>
+      <script>
+<!--         Getting File name-->
+<!--            document.querySelector("#receipt").onchange = function(){-->
+<!--            document.querySelector("#e-file-name").textContent = this.files[0].name;-->
+<!--        }-->
+
+<!--          Function for Jarooriyat and data  -->
+
+        function func1()
+        {
+            var rd1=document.getElementById("rd1");
+            var rd2=document.getElementById("rd2");
+
+            if(rd1.checked==true)
+            {
+                document.getElementById('form1').style.display='none';
+                document.getElementById('form2').style.display='block';
+            }
+            if(rd2.checked==true)
+            {
+                document.getElementById('form1').style.display='block';
+                document.getElementById('form2').style.display='none';
+            }
+        }
+
+<!--            Function for data    -->
+
+        function funcdata()
+        {
+            var drd1=document.getElementById("drd1");
+            var drd2=document.getElementById("drd2");
+
+            if(drd1.checked==true)
+            {
+                 document.getElementById('dform1').style.display='none';
+                 document.getElementById('dform2').style.display='block';
+            }
+            if(drd2.checked==true)
+            {
+                 document.getElementById('dform1').style.display='block';
+                 document.getElementById('dform2').style.display='none';
+            }
+            document.getElementById('rdd1').style.display='none';
+            document.getElementById('rdd2').style.display='none';
+            document.getElementById('dselect').style.display='none';
+        }
+
+<!--          Function for jaroorat  -->
+
+        function funcjaroorat()
+        {
+            var jrd1=document.getElementById("jrd1");
+            var jrd2=document.getElementById("jrd2");
+            var jrd3=document.getElementById("jrd3");
+            var jrd4=document.getElementById("jrd4");
+            var jrd5=document.getElementById("jrd5");
+
+            if(jrd1.checked==true)
+            {
+             document.getElementById('jform1').style.display='block';
+             document.getElementById('jform2').style.display='none';
+             document.getElementById('jform3').style.display='none';
+             document.getElementById('jform4').style.display='none';
+             document.getElementById('jform5').style.display='none';
+            }
+            if(jrd2.checked==true)
+            {
+                 document.getElementById('jform1').style.display='none';
+                 document.getElementById('jform2').style.display='block';
+                 document.getElementById('jform3').style.display='none';
+                 document.getElementById('jform4').style.display='none';
+                 document.getElementById('jform5').style.display='none';
+            }
+            if(jrd3.checked==true)
+            {
+                 document.getElementById('jform1').style.display='none';
+                 document.getElementById('jform2').style.display='none';
+                 document.getElementById('jform3').style.display='block';
+                 document.getElementById('jform4').style.display='none';
+                 document.getElementById('jform5').style.display='none';
+            }
+            if(jrd4.checked==true)
+            {
+                 document.getElementById('jform1').style.display='none';
+                 document.getElementById('jform2').style.display='none';
+                 document.getElementById('jform3').style.display='none';
+                 document.getElementById('jform4').style.display='block';
+                 document.getElementById('jform5').style.display='none';
+            }
+            if(jrd5.checked==true)
+            {
+                 document.getElementById('jform1').style.display='none';
+                 document.getElementById('jform2').style.display='none';
+                 document.getElementById('jform3').style.display='none';
+                 document.getElementById('jform4').style.display='none';
+                 document.getElementById('jform5').style.display='block';
+            }
+            document.getElementById('rdj1').style.display='none';
+            document.getElementById('rdj2').style.display='none';
+            document.getElementById('rdj3').style.display='none';
+            document.getElementById('rdj4').style.display='none';
+            document.getElementById('rdj5').style.display='none';
+            document.getElementById('jselect').style.display='none';
+            document.getElementById('hrj').style.display='none';
+        }
+
+<!--        To hide different content jarooriyat-->
+
+        function preventExtra()
+        {
+<!--            document.getElementById('jform1').style.display='none';-->
+<!--            document.getElementById('jform2').style.display='none';-->
+<!--            document.getElementById('jform3').style.display='none';-->
+<!--            document.getElementById('jform4').style.display='none';-->
+<!--            document.getElementById('jform5').style.display='none';-->
+            document.getElementById('rdj').style.display='none';
+            document.getElementById('rdd').style.display='none';
+            document.getElementById('select').style.display='none';
+            document.getElementById("jrd1").checked=false;
+            document.getElementById("jrd2").checked=false;
+            document.getElementById("jrd3").checked=false;
+            document.getElementById("jrd4").checked=false;
+            document.getElementById("jrd5").checked=false;
+            document.getElementById("test_from2").reset();
+<!--            document.getElementById("jtest_from1").reset();-->
+<!--            document.getElementById("jtest_from2").reset();-->
+<!--            document.getElementById("jtest_from3").reset();-->
+<!--            document.getElementById("jtest_from4").reset();-->
+<!--            document.getElementById("jtest_from5").reset();-->
+        }
+
+<!--        To hide different content data-->
+
+        function preventExtraData()
+        {
+<!--            document.getElementById('dform1').style.display='none';-->
+<!--            document.getElementById('dform2').style.display='none';-->
+            document.getElementById('rdj').style.display='none';
+            document.getElementById('rdd').style.display='none';
+            document.getElementById('select').style.display='none';
+            document.getElementById("drd1").checked=false;
+            document.getElementById("drd2").checked=false;
+<!--            document.getElementById("dtest_from1").reset();-->
+<!--            document.getElementById("dtest_from2").reset();-->
+        }
+
+        {% if thank %}
+             alert('Thanks for ordering with us. Your order is {{eid}}. Use it to track your order using our order tracker');
+             localStorage.clear();
+             document.location = "/thanks";
+        {% endif %}
+      </script>
+      <style>
+          #bgcolor
+          {
+            background-color: #26a0da;
+            background-image: linear-gradient(to bottom, #7209b7, #26a0da);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+          }
+      </style>
+      <body id="bgcolor">
+        {% load static %}
+        <div style=" margin-top: 6%; margin-bottom: 3.6%; margin-right: 35%; margin-left: 35%">
+            <div class="container mt-3" style="background-color:#03046E; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding:0px; color: #fff; border-radius: 15px; margin-bottom: 7%; ">
+                <form id="mainForm" method="post" action="/" enctype="multipart/form-data">
+                    {% csrf_token %}
+                </form>
+                <div style="background-color:#03044E; color: #fff; min-height:127px; padding:25px; border-radius: 15px; margin-top: 9%;">
+                    <center>
+                        <h2><strong>ઈન્કવાઈરી પોઇન્ટ</strong></h2>
+                        <em>ઈન્કવાઈરી પોઇન્ટ જરૂરતમંદો માટે કાયમી ઉપાય</em>
+                    </center>
+                </div>
+                <div style="padding:20px"><br>
+                    <div align="center">
+                        <h2><strong><span style="color:#fff">અલ-હુજ્જત મરકઝુન નસ્ર</span></strong></h2>
+                    </div>
+
+<!--                    Main form-->
+
+                    <form>
+                        <br>
+                        <label class="labelName" style="font-size: 24px; display: block;" id="select">
+                            સિલેક્ટ કરો
+                            <em class="important" style="color:red">*</em>
+                        </label>
+                        <div class="overflow">
+                            <div class="form-row">
+                                <div  id="rdj" style="display: block;">
+                                    <input type="radio" onclick="func1(); preventExtraData()" id="rd1" name="Radio-choice" value="જરૂરિયાતમંદ">
+                                    <label for="rd1" class="RadioChoice" style="font-size: 20px">
+                                        જરૂરિયાતમંદ
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div id="rdd" style="display: block; ">
+                                    <input type="radio" onclick="func1(); preventExtra();" id="rd2" name="Radio-choice"  value="દાતા">
+                                    <label for="rd2" class="RadioChoice" style="font-size: 20px">
+                                    દાતા
+                                </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+<!--                   JArooriyat Form-->
+
+                    <div id="form2" style="display:none">
+                        <form name="test_from2" id="test_from2" method="post">
+                            {% csrf_token %}
+                            <div>
+                                <label class="labelName" id="jselect" style="font-size: 24px; display: block;">
+                                    ફિલ્ડ સિલેક્ટ કરો<em class="important" style="color:red">*</em>
+                                </label>
+                            </div>
+                            <hr color="white" id="hrj" style="display: block;">
+                            <div class="form-group" id="rdj1" style="display: block; font-size: 20px;">
+                                <input type="radio" onclick="window.location = '/educational'" id="jrd1" name="Radio-choice" class="radioBtnType" value="એજ્યુકેશનલ">
+                                <label for="jrd1" class="RadioChoice">
+                                    એજ્યુકેશનલ
+                                </label>
+                            </div>
+                            <div class="form-group" id="rdj2" style="display: block;  font-size: 20px;">
+                                <input type="radio" onclick="window.location = '/medical'" id="jrd2" name="Radio-choice" class="radioBtnType" value="મેડીકલ">
+                                <label for="jrd2" class="RadioChoice">
+                                મેડીકલ
+                            </label>
+                            </div>
+                            <div class="form-group" id="rdj3" style="display: block; font-size: 20px;">
+                                <input type="radio" onclick="window.location = '/samajik'" id="jrd3" name="Radio-choice" class="radioBtnType" value="સામાજિક">
+                                <label for="jrd3" class="RadioChoice">
+                                    સામાજિક
+                                </label>
+                            </div>
+                            <div class="form-group" id="rdj4" style="display: block; font-size: 20px; ">
+                                <input type="radio" onclick = "window.location = '/pardes'" id="jrd4" name="Radio-choice" class="radioBtnType" value="પરદેશ જવા">
+                                <label for="jrd4" class="RadioChoice">
+                                    પરદેશ જવા
+                                </label>
+                            </div>
+                            <div class="form-group" id="rdj5" style="display: block; font-size: 20px; ">
+                                <input type="radio" onclick="window.location = '/any'" id="jrd5" name="Radio-choice" class="radioBtnType" value="અન્ય">
+                                <label for="jrd5" class="RadioChoice">
+                                    અન્ય
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+
+<!--                   Data form-->
+
+                    <div id="form1" style="display:none">
+                        <form name="test_from1" id="test_form1" method="post">
+                            {% csrf_token %}
+                            <div>
+                                <center><h3>દાતા ની વિગત</h3></center>
+                                <hr color="white" id="hrd" style="display: block;">
+                                <label class="labelName" id="dselect" style="font-size: 24px; display: block;">
+                                    સિલેક્ટ કરો<em class="important" style="color:red">*</em>
+                                </label>
+                                <div class="form-group" id="rdd1" style="display: block; font-size: 20px;">
+                                    <input type="radio" onclick="window.location = '/datalogin'" id="drd1" name="Radio-choice" class="radioBtnType" value="પહેલી વાર રજીસ્ટ્રેશન">
+                                    <label for="drd1" class="RadioChoice">
+                                        પહેલી વાર રજીસ્ટ્રેશન
+                                    </label>
+                                </div>
+                                <div class="form-group" id="rdd2" style="display: block; font-size: 20px;"  >
+                                    <input type="radio" onclick="window.location = '/daan'" id="drd2" name="Radio-choice" class="radioBtnType" value="દાન માટે">
+                                    <label for="drd2" class="RadioChoice">
+                                        દાન માટે
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <br>
+
+<!--                 Submit button-->
+
+<!--                    <div>-->
+<!--                        <center>-->
+<!--                            <input  form="mainForm" type="submit" name="final_submit" class="btn btn-success">-->
+<!--                        </center>-->
+<!--                    </div>-->
+                </div>
+
+<!--                Optional JavaScript -->
+<!--                jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+                <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+            </div>
+            <br>
+        </div>
+      </body>
+</html>
